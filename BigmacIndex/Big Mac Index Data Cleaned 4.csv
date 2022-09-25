@@ -1,0 +1,105 @@
+date,iso_a3,currency_code,name,local_price,dollar_ex,dollar_price,USD_raw,Raw Names
+01/07/2020,ARE,AED,United Arab Emirates,14.75,3.67295,4.015845574,-0.2967,N/A
+01/07/2020,ARG,ARS,Argentina,250,71.24065,3.50923244,-0.38542,N/A
+01/07/2020,AUS,AUD,Australia,6.55,1.430615165,4.57845,-0.19817,N/A
+01/07/2020,AZE,AZN,Azerbaijan,3.95,1.699,2.324896998,-0.59284,N/A
+01/07/2020,BHR,BHD,Bahrain,1.4,0.37705,3.713035406,-0.34973,N/A
+01/07/2020,BRA,BRL,Brazil,20.9,5.34045,3.913527886,-0.31462,N/A
+01/07/2020,CAN,CAD,Canada,6.88,1.3552,5.07674144,-0.1109,N/A
+01/07/2020,CHE,CHF,Switzerland,6.5,0.94125,6.905710491,0.20941,N/A
+01/07/2020,CHL,CLP,Chile,2740,787.7,3.478481655,-0.39081,N/A
+01/07/2020,CHN,CNY,China,21.7,7.0035,3.098450775,-0.45736,N/A
+01/07/2020,COL,COP,Colombia,11900,3617.01,3.290010257,-0.42382,N/A
+01/07/2020,CRI,CRC,Costa Rica,2350,581.825,4.039015168,-0.29264,N/A
+01/07/2020,CZE,CZK,Czech Republic,89,23.4134,3.801242024,-0.33428,N/A
+01/07/2020,DNK,DKK,Denmark,30,6.54935,4.580607236,-0.19779,N/A
+01/07/2020,EGY,EGP,Egypt,42,15.95,2.63322884,-0.53884,N/A
+01/07/2020,EUZ,EUR,Euro area,4.21,0.879623521,4.7861385,-0.1618,N/A
+01/07/2020,GBR,GBP,Britain,3.39,0.79255003,4.2773325,-0.2509,N/A
+01/07/2020,GTM,GTQ,Guatemala,25,7.693,3.249707526,-0.43087,N/A
+01/07/2020,HKG,HKD,Hong Kong,20.5,7.75095,2.644837084,-0.53681,N/A
+01/07/2020,HND,HNL,Honduras,87,24.6907,3.523593904,-0.38291,N/A
+01/07/2020,HRV,HRK,Croatia,22,6.6272,3.319652342,-0.41862,N/A
+01/07/2020,HUN,HUF,Hungary,900,311.37795,2.890378076,-0.4938,N/A
+01/07/2020,IDN,IDR,Indonesia,34000,14435,2.355386214,-0.5875,N/A
+01/07/2020,IND,INR,India,190,75.1975,2.526679743,-0.5575,N/A
+01/07/2020,ISR,ILS,Israel,17,3.4367,4.946605756,-0.13369,N/A
+01/07/2020,JOR,JOD,Jordan,2.3,0.709,3.244005642,-0.43187,N/A
+01/07/2020,JPN,JPY,Japan,390,107.275,3.635516197,-0.36331,N/A
+01/07/2020,KOR,KRW,South Korea,4500,1200.95,3.747033598,-0.34378,N/A
+01/07/2020,KWT,KWD,Kuwait,1.15,0.3078,3.736192333,-0.34568,N/A
+01/07/2020,LBN,LBP,Lebanon,9000,1512,5.952380952,0.04245,N/A
+01/07/2020,LKA,LKR,Sri Lanka,680,185.85,3.658864676,-0.35922,N/A
+01/07/2020,MDA,MDL,Moldova,47,17.075,2.752562225,-0.51794,N/A
+01/07/2020,MEX,MXN,Mexico,50,22.436,2.228561241,-0.60971,N/A
+01/07/2020,MYS,MYR,Malaysia,9.99,4.2655,2.342046653,-0.58983,N/A
+01/07/2020,NIC,NIO,Nicaragua,120,34.3752,3.49088878,-0.38864,N/A
+01/07/2020,NOR,NOK,Norway,52,9.37105,5.549004647,-0.0282,N/A
+01/07/2020,NZL,NZD,New Zealand,6.6,1.51779616,4.34841,-0.23846,N/A
+01/07/2020,OMN,OMR,Oman,1.1,0.385,2.857142857,-0.49962,N/A
+01/07/2020,PAK,PKR,Pakistan,550,166.5,3.303303303,-0.42149,N/A
+01/07/2020,PER,PEN,Peru,11.9,3.4973,3.402624882,-0.40409,N/A
+01/07/2020,PHL,PHP,Philippines,142,49.426,2.872981831,-0.49685,N/A
+01/07/2020,POL,PLN,Poland,11,3.94345,2.789435646,-0.51148,N/A
+01/07/2020,QAT,QAR,Qatar,13,3.641,3.570447679,-0.3747,N/A
+01/07/2020,ROU,RON,Romania,9.9,4.26005,2.323916386,-0.59301,N/A
+01/07/2020,RUS,RUB,Russia,135,70.585,1.91258766,-0.66505,N/A
+01/07/2020,SAU,SAR,Saudi Arabia,14,3.75105,3.732288293,-0.34636,N/A
+01/07/2020,SGP,SGD,Singapore,5.9,1.3876,4.251945806,-0.25535,N/A
+01/07/2020,SWE,SEK,Sweden,52.6,9.1384,5.755931016,0.00804,N/A
+01/07/2020,THA,THB,Thailand,128,31.385,4.078381392,-0.28575,N/A
+01/07/2020,TUR,TRY,Turkey,13.99,6.8595,2.039507253,-0.64282,N/A
+01/07/2020,TWN,TWD,Taiwan,72,29.4565,2.444282247,-0.57193,N/A
+01/07/2020,UKR,UAH,Ukraine,59,27.13,2.174714338,-0.61914,N/A
+01/07/2020,URY,UYU,Uruguay,189,43.675,4.327418432,-0.24213,N/A
+01/07/2020,USA,USD,United States of America,5.71,1,5.71,0,N/A
+01/07/2020,VNM,VND,Vietnam,66000,23180,2.84728214,-0.50135,N/A
+01/07/2020,ZAF,ZAR,South Africa,31,16.6725,1.859349228,-0.67437,N/A
+N/A,N/A,N/A,Tanzania,0.1,0.1,0.1,0.1,"""Tanzania"""
+N/A,N/A,N/A,W. Sahara,0.1,0.1,0.1,0.1,"""W. Sahara"""
+N/A,N/A,N/A,Kazakhstan,0.1,0.1,0.1,0.1,"""Kazakhstan"""
+N/A,N/A,N/A,Uzbekistan,0.1,0.1,0.1,0.1,"""Uzbekistan"""
+N/A,N/A,N/A,Papua New Guinea,0.1,0.1,0.1,0.1,"""Papua New Guinea"""
+N/A,N/A,N/A,Dem. Rep. Congo,0.1,0.1,0.1,0.1,"""Dem. Rep. Congo"""
+N/A,N/A,N/A,Somalia,0.1,0.1,0.1,0.1,"""Somalia"""
+N/A,N/A,N/A,Kenya,0.1,0.1,0.1,0.1,"""Kenya"""
+N/A,N/A,N/A,Sudan,0.1,0.1,0.1,0.1,"""Sudan"""
+N/A,N/A,N/A,Chad,0.1,0.1,0.1,0.1,"""Chad"""
+N/A,N/A,N/A,Haiti,0.1,0.1,0.1,0.1,"""Haiti"""
+N/A,N/A,N/A,Dominican Rep.,0.1,0.1,0.1,0.1,"""Dominican Rep."""
+N/A,N/A,N/A,Bahamas,0.1,0.1,0.1,0.1,"""Bahamas"""
+N/A,N/A,N/A,Falkland Is.,0.1,0.1,0.1,0.1,"""Falkland Is."""
+N/A,N/A,N/A,Greenland,0.1,0.1,0.1,0.1,"""Greenland"""
+N/A,N/A,N/A,Fr. S. Antarctic Lands,0.1,0.1,0.1,0.1,"""Fr. S. Antarctic Lands"""
+N/A,N/A,N/A,Timor-Leste,0.1,0.1,0.1,0.1,"""Timor-Leste"""
+N/A,N/A,N/A,Lesotho,0.1,0.1,0.1,0.1,"""Lesotho"""
+N/A,N/A,N/A,Bolivia,0.1,0.1,0.1,0.1,"""Bolivia"""
+N/A,N/A,N/A,Panama,0.1,0.1,0.1,0.1,"""Panama"""
+N/A,N/A,N/A,El Salvador,0.1,0.1,0.1,0.1,"""El Salvador"""
+N/A,N/A,N/A,Belize,0.1,0.1,0.1,0.1,"""Belize"""
+N/A,N/A,N/A,Venezuela,0.1,0.1,0.1,0.1,"""Venezuela"""
+N/A,N/A,N/A,Guyana,0.1,0.1,0.1,0.1,"""Guyana"""
+N/A,N/A,N/A,Suriname,0.1,0.1,0.1,0.1,"""Suriname"""
+N/A,N/A,N/A,France,0.1,0.1,0.1,0.1,"""France"""
+N/A,N/A,N/A,Ecuador,0.1,0.1,0.1,0.1,"""Ecuador"""
+N/A,N/A,N/A,Puerto Rico,0.1,0.1,0.1,0.1,"""Puerto Rico"""
+N/A,N/A,N/A,Jamaica,0.1,0.1,0.1,0.1,"""Jamaica"""
+N/A,N/A,N/A,Cuba,0.1,0.1,0.1,0.1,"""Cuba"""
+N/A,N/A,N/A,Zimbabwe,0.1,0.1,0.1,0.1,"""Zimbabwe"""
+N/A,N/A,N/A,Botswana,0.1,0.1,0.1,0.1,"""Botswana"""
+N/A,N/A,N/A,Namibia,0.1,0.1,0.1,0.1,"""Namibia"""
+N/A,N/A,N/A,Senegal,0.1,0.1,0.1,0.1,"""Senegal"""
+N/A,N/A,N/A,Mali,0.1,0.1,0.1,0.1,"""Mali"""
+N/A,N/A,N/A,Mauritania,0.1,0.1,0.1,0.1,"""Mauritania"""
+N/A,N/A,N/A,Benin,0.1,0.1,0.1,0.1,"""Benin"""
+N/A,N/A,N/A,Niger,0.1,0.1,0.1,0.1,"""Niger"""
+N/A,N/A,N/A,Nigeria,0.1,0.1,0.1,0.1,"""Nigeria"""
+N/A,N/A,N/A,Cameroon,0.1,0.1,0.1,0.1,"""Cameroon"""
+N/A,N/A,N/A,Togo,0.1,0.1,0.1,0.1,"""Togo"""
+N/A,N/A,N/A,Ghana,0.1,0.1,0.1,0.1,"""Ghana"""
+N/A,N/A,N/A,Côte d'Ivoire,0.1,0.1,0.1,0.1,"""Côte d'Ivoire"""
+N/A,N/A,N/A,Guinea,0.1,0.1,0.1,0.1,"""Guinea"""
+N/A,N/A,N/A,Guinea-Bissau,0.1,0.1,0.1,0.1,"""Guinea-Bissau"""
+N/A,N/A,N/A,Liberia,0.1,0.1,0.1,0.1,"""Liberia"""
+N/A,N/A,N/A,Sierra Leone,0.1,0.1,0.1,0.1,"""Sierra Leone"""
+N/A,N/A,N/A,Burkina Faso,0.1,0.1,0.1,0.1,"""Burkina Faso"""
