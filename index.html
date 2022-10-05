@@ -1,51 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.8"></script>
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.8"></script>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css" />
+    <link rel="stylesheet" href="layout.css">
 </head>
 <body>
-  <div id="vis"/>
-  <script>
-    const spec = {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Price of Big Mac Around the World in USD (2020)",
-  "width": 800,
-  "height": 400,
-  "projection": {"type": "equalEarth"},
-  "data": {
-    "url": "https://raw.githubusercontent.com/JiazhouLiu/FIT3179/main/VegaLite/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
-    "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
-  },
-  "transform": [
-    {
-      "lookup": "properties.NAME",
-      "from": {
-        "data": {
-          "url": "https://raw.githubusercontent.com/Dominicyl/FIT3179/main/BigmacIndex/Big%20Mac%20Index%20Data%20Cleaned%20FINAL.csv"
-        },
-        "key": "name",
-        "fields": ["dollar_price"]
-      }
-    },
-    {"calculate": "datum.dollar_price + 0.1", "as": "Big Mac Price"}
-  ],
-  "mark": {"type": "geoshape"},
-  "encoding": {
-    "color": {
-      "field": "dollar_price",
-      "type": "quantitative",
-      "scale": {"type": "linear"}
-    },
-    "tooltip": [
-      {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-      {"field": "dollar_price", "type": "quantitative"}
-    ]
-  },
-  "config": {}
-};
-    vegaEmbed("#vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
-  </script>
+   	 <div class="pure-g">
+   	 <div class="pure-u-1-3"><div id="vis1" class="vis-container"></div></div>
+  	 <div class="pure-u-1-3"><div id="vis2" class="vis-container"></div></div>
+  	 <div class="pure-u-1-3"><p>Thirds</p></div>
+
+	<script type="text/javascript">
+    	var bigmacVis = "./bigmac.json";
+    	var foodVis = "./food.json";
+
+    	vegaEmbed('#vis1', bigmacVis { "actions": false });
+
+   	 vegaEmbed('#vis2', foodVis { "actions": false }).then(function (result) {
+     	 // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    	}).catch(console.error);
+
+  	</script>
 </body>
+
 </html>
