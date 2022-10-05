@@ -1,0 +1,210 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "background": "white",
+  "padding": 5,
+  "width": 600,
+  "height": 600,
+  "title": {
+    "text": "Calories and Fat Ratio of the McDonalds Menu",
+    "frame": "group"
+  },
+  "style": "cell",
+  "data": [
+    {
+      "name": "source_0",
+      "url": "https://raw.githubusercontent.com/Dominicyl/FIT3179/main/FoodData/menu4.csv",
+      "format": {"type": "csv", "delimiter": ","},
+      "transform": [
+        {"type": "filter", "expr": "datum.Calories >= 0"},
+        {
+          "type": "filter",
+          "expr": "Category_selection == null || datum.Category == Category_selection"
+        },
+        {
+          "type": "filter",
+          "expr": "isValid(datum[\"Total Fat\"]) && isFinite(+datum[\"Total Fat\"]) && isValid(datum[\"Calories\"]) && isFinite(+datum[\"Calories\"])"
+        }
+      ]
+    }
+  ],
+  "signals": [
+    {
+      "name": "Category_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Breakfast",
+          "Beef & Pork",
+          "Chicken & Fish",
+          "Salads",
+          "Snacks & Sides",
+          "Desserts",
+          "Beverages"
+        ],
+        "labels": [
+          "Show All",
+          "Breakfast",
+          "Beef & Pork",
+          "Chicken & Fish",
+          "Salads",
+          "Snacks & Sides",
+          "Desserts",
+          "Beverages"
+        ],
+        "name": "Category Selection: "
+      }
+    }
+  ],
+  "marks": [
+    {
+      "name": "layer_0_marks",
+      "type": "text",
+      "style": ["text"],
+      "from": {"data": "source_0"},
+      "encode": {
+        "update": {
+          "align": {"value": "center"},
+          "baseline": {"value": "middle"},
+          "dy": {"value": -4},
+          "fontSize": {"value": 10},
+          "fontStyle": {"value": "italic"},
+          "fill": {"value": "black"},
+          "opacity": [
+            {
+              "test": "datum['Item'] == 'Big Mac' || datum['Item'] == 'Big Breakfast with Hotcakes (Large Biscuit)' || datum['Item'] == 'Dasani Water Bottle'",
+              "value": 1
+            },
+            {"value": 0}
+          ],
+          "description": {
+            "signal": "\"Total Fat: \" + (format(datum[\"Total Fat\"], \"\")) + \"; Calories: \" + (format(datum[\"Calories\"], \"\")) + \"; Item: \" + (isValid(datum[\"Item\"]) ? datum[\"Item\"] : \"\"+datum[\"Item\"])"
+          },
+          "x": {"scale": "x", "field": "Total Fat"},
+          "y": {"scale": "y", "field": "Calories"},
+          "text": {
+            "signal": "isValid(datum[\"Item\"]) ? datum[\"Item\"] : \"\"+datum[\"Item\"]"
+          }
+        }
+      }
+    },
+    {
+      "name": "layer_1_marks",
+      "type": "symbol",
+      "style": ["circle"],
+      "from": {"data": "source_0"},
+      "encode": {
+        "update": {
+          "opacity": {"value": 0.6},
+          "fill": {"scale": "color", "field": "Category"},
+          "tooltip": {
+            "signal": "{\"Item\": isValid(datum[\"Item\"]) ? datum[\"Item\"] : \"\"+datum[\"Item\"], \"Total Fat\": format(datum[\"Total Fat\"], \"\"), \"Calories\": format(datum[\"Calories\"], \"\")}"
+          },
+          "ariaRoleDescription": {"value": "circle"},
+          "description": {
+            "signal": "\"Total Fat: \" + (format(datum[\"Total Fat\"], \"\")) + \"; Calories: \" + (format(datum[\"Calories\"], \"\")) + \"; Category: \" + (isValid(datum[\"Category\"]) ? datum[\"Category\"] : \"\"+datum[\"Category\"]) + \"; Item: \" + (isValid(datum[\"Item\"]) ? datum[\"Item\"] : \"\"+datum[\"Item\"])"
+          },
+          "x": {"scale": "x", "field": "Total Fat"},
+          "y": {"scale": "y", "field": "Calories"},
+          "shape": {"value": "circle"}
+        }
+      }
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "linear",
+      "domain": [0, 70],
+      "range": [0, {"signal": "width"}],
+      "zero": true
+    },
+    {
+      "name": "y",
+      "type": "linear",
+      "domain": [1, 1200],
+      "range": [{"signal": "height"}, 0],
+      "zero": false
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": [
+        "Breakfast",
+        "Beef & Pork",
+        "Chicken & Fish",
+        "Salads",
+        "Snacks & Sides",
+        "Desserts",
+        "Beverages"
+      ],
+      "range": [
+        "#957111",
+        "#ff7f00",
+        "#f5b706",
+        "#3fc045",
+        "#c6dc23",
+        "#b317dc",
+        "#3571c0"
+      ]
+    }
+  ],
+  "axes": [
+    {
+      "scale": "x",
+      "orient": "bottom",
+      "tickCount": 7,
+      "gridScale": "y",
+      "grid": true,
+      "domain": false,
+      "labels": false,
+      "aria": false,
+      "maxExtent": 0,
+      "minExtent": 0,
+      "ticks": false,
+      "zindex": 0
+    },
+    {
+      "scale": "y",
+      "orient": "left",
+      "tickCount": 6,
+      "gridScale": "x",
+      "grid": true,
+      "domain": false,
+      "labels": false,
+      "aria": false,
+      "maxExtent": 0,
+      "minExtent": 0,
+      "ticks": false,
+      "zindex": 0
+    },
+    {
+      "scale": "x",
+      "orient": "bottom",
+      "grid": false,
+      "title": "Total Fat",
+      "tickCount": 7,
+      "labelFlush": true,
+      "labelOverlap": true,
+      "zindex": 0
+    },
+    {
+      "scale": "y",
+      "orient": "left",
+      "grid": false,
+      "title": "Calories",
+      "tickCount": 6,
+      "labelOverlap": true,
+      "zindex": 0
+    }
+  ],
+  "legends": [
+    {
+      "fill": "color",
+      "symbolType": "circle",
+      "title": "Category",
+      "encode": {"symbols": {"update": {"opacity": {"value": 0.6}}}}
+    }
+  ],
+  "config": {}
+}
