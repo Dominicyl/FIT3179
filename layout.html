@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.8"></script>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css" />
+    <link rel="stylesheet" href="layout.css">
+</head>
+<body>
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div id="vis"/>
+          <script>
+            const spec = {
+          "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+          "title": "Price of Big Mac Around the World in USD (2020)",
+          "width": 800,
+          "height": 400,
+          "projection": {"type": "equalEarth"},
+          "data": {
+            "url": "https://raw.githubusercontent.com/JiazhouLiu/FIT3179/main/VegaLite/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+            "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+          },
+          "transform": [
+            {
+              "lookup": "properties.NAME",
+              "from": {
+                "data": {
+                  "url": "https://raw.githubusercontent.com/Dominicyl/FIT3179/main/BigmacIndex/Big%20Mac%20Index%20Data%20Cleaned%20FINAL.csv"
+                },
+                "key": "name",
+                "fields": ["dollar_price"]
+              }
+            },
+            {"calculate": "datum.dollar_price + 0.1", "as": "Big Mac Price"}
+          ],
+          "mark": {"type": "geoshape"},
+          "encoding": {
+            "color": {
+              "field": "dollar_price",
+              "type": "quantitative",
+              "scale": {"type": "linear"}
+            },
+            "tooltip": [
+              {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+              {"field": "dollar_price", "type": "quantitative"}
+            ]
+          },
+          "config": {}
+        };
+            vegaEmbed("#vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+          </script>
+        </div>
+        <div class="pure-u-1-2">
+          <div id="vis"/>
+          <script>
+            const spec = {
+          "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+          "width": 600,
+          "height": 600,
+          "title": "Calories and Fat Ratio of the McDonalds Menu",
+          "data": {
+            "url": "https://raw.githubusercontent.com/Dominicyl/FIT3179/main/FoodData/menu4.csv"
+          },
+          "params": [
+            {
+              "name": "Category_selection",
+              "bind": {
+                "input": "select",
+                "options": [
+                  null,
+                  "Breakfast",
+                  "Beef & Pork",
+                  "Chicken & Fish",
+                  "Salads",
+                  "Snacks & Sides",
+                  "Desserts",
+                  "Beverages"
+                ],
+                "labels": [
+                  "Show All",
+                  "Breakfast",
+                  "Beef & Pork",
+                  "Chicken & Fish",
+                  "Salads",
+                  "Snacks & Sides",
+                  "Desserts",
+                  "Beverages"
+                ],
+                "name": "Category Selection: "
+              }
+            }
+          ],
+          "transform": [
+            {"filter": "datum.Calories >= 0"},
+            {
+              "filter": "Category_selection == null || datum.Category == Category_selection"
+            }
+          ],
+          "encoding": {
+            "x": {
+              "field": "Total Fat",
+              "type": "quantitative",
+              "title": "Total Fat",
+              "axis": {"tickCount": 7},
+              "scale": {"type": "linear", "domain": [0, 70]}
+            },
+            "y": {
+              "field": "Calories",
+              "type": "quantitative",
+              "axis": {"tickCount": 6},
+              "scale": {"type": "linear", "domain": [1, 1200]}
+            }
+          },
+          "layer": [
+            {
+              "mark": {
+                "type": "text",
+                "align": "center",
+                "baseline": "middle",
+                "dy": -4,
+                "fontSize": 10,
+                "fontStyle": "italic"
+              },
+              "encoding": {
+                "text": {"field": "Item", "type": "nominal"},
+                "color": {"value": "black"},
+                "opacity": {
+                  "condition": {
+                    "test": "datum['Item'] == 'Big Mac' || datum['Item'] == 'Big Breakfast with Hotcakes (Large Biscuit)' || datum['Item'] == 'Dasani Water Bottle'",
+                    "value": 1
+                  },
+                  "value": 0
+                }
+              }
+            },
+            {
+              "mark": "circle",
+              "encoding": {
+                "color": {
+                  "field": "Category",
+                  "type": "nominal",
+                  "scale": {
+                    "domain": [
+                      "Breakfast",
+                      "Beef & Pork",
+                      "Chicken & Fish",
+                      "Salads",
+                      "Snacks & Sides",
+                      "Desserts",
+                      "Beverages"
+                    ],
+                    "range": [
+                      "#957111",
+                      "#ff7f00",
+                      "#f5b706",
+                      "#3fc045",
+                      "#c6dc23",
+                      "#b317dc",
+                      "#3571c0"
+                    ]
+                  }
+                },
+                "opacity": {"value": 0.6},
+                "tooltip": [
+                  {"field": "Item", "type": "nominal"},
+                  {"field": "Total Fat", "type": "quantitative", "format": ""},
+                  {"field": "Calories", "type": "quantitative", "format": ""}
+                ]
+              }
+            }
+          ],
+          "config": {}
+        };
+            vegaEmbed("#vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+          </script>
+        </div>
+    </div>
+</body>
+
+</html>
