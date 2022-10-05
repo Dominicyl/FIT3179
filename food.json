@@ -1,0 +1,118 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 600,
+  "title": "Calories and Fat Ratio of the McDonalds Menu",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Dominicyl/FIT3179/main/FoodData/menu4.csv"
+  },
+  "params": [
+    {
+      "name": "Category_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Breakfast",
+          "Beef & Pork",
+          "Chicken & Fish",
+          "Salads",
+          "Snacks & Sides",
+          "Desserts",
+          "Beverages"
+        ],
+        "labels": [
+          "Show All",
+          "Breakfast",
+          "Beef & Pork",
+          "Chicken & Fish",
+          "Salads",
+          "Snacks & Sides",
+          "Desserts",
+          "Beverages"
+        ],
+        "name": "Category Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "datum.Calories >= 0"},
+    {
+      "filter": "Category_selection == null || datum.Category == Category_selection"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "Total Fat",
+      "type": "quantitative",
+      "title": "Total Fat",
+      "axis": {"tickCount": 7},
+      "scale": {"type": "linear", "domain": [0, 70]}
+    },
+    "y": {
+      "field": "Calories",
+      "type": "quantitative",
+      "axis": {"tickCount": 6},
+      "scale": {"type": "linear", "domain": [1, 1200]}
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "dy": -4,
+        "fontSize": 10,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "Item", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['Item'] == 'Big Mac' || datum['Item'] == 'Big Breakfast with Hotcakes (Large Biscuit)' || datum['Item'] == 'Dasani Water Bottle'",
+            "value": 1
+          },
+          "value": 0
+        }
+      }
+    },
+    {
+      "mark": "circle",
+      "encoding": {
+        "color": {
+          "field": "Category",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Breakfast",
+              "Beef & Pork",
+              "Chicken & Fish",
+              "Salads",
+              "Snacks & Sides",
+              "Desserts",
+              "Beverages"
+            ],
+            "range": [
+              "#957111",
+              "#ff7f00",
+              "#f5b706",
+              "#3fc045",
+              "#c6dc23",
+              "#b317dc",
+              "#3571c0"
+            ]
+          }
+        },
+        "opacity": {"value": 0.6},
+        "tooltip": [
+          {"field": "Item", "type": "nominal"},
+          {"field": "Total Fat", "type": "quantitative", "format": ""},
+          {"field": "Calories", "type": "quantitative", "format": ""}
+        ]
+      }
+    }
+  ],
+  "config": {}
+}
