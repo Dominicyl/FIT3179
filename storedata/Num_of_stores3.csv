@@ -1,0 +1,102 @@
+﻿Country,Number_of_stores,First_store_opening_date,Number_of_stores_per_million_pop,col,animal
+United States of America,13375,15/05/1940,40.807,41,person
+China,3500,8/10/1990,2.511,3,person
+Japan,2900,21/07/1971,22.927,23,person
+Germany,1536,22/11/1971,18.564,19,person
+France,1500,30/06/1972,22.289,22,person
+Canada,1458,3/06/1967,39.179,39,person
+United Kingdom,1421,1/01/1970,21.517,22,person
+Brazil,1031,13/02/1979,4.92,5,person
+Australia,981,30/05/1971,39.163,39,person
+Russian Federation,850,31/01/1990,5.787,6,person
+Philippines,655,27/09/1981,6.155,6,person
+Italy,640,20/03/1985,10.59,11,person
+Spain,550,10/03/1981,11.788,12,person
+Poland,496,16/06/1992,12.905,13,person
+South Korea,447,29/03/1988,8.657,9,person
+Taiwan,413,28/01/1984,17.517,18,person
+Mexico,402,29/10/1985,3.223,3,person
+Saudi Arabia,304,8/12/1993,9.098,9,person
+India,300,13/10/1996,0.224,0,person
+Malaysia,282,29/04/1982,8.636,9,person
+South Africa,275,11/11/1995,4.764,5,person
+The Netherlands,259,21/08/1971,15.013,15,person
+Turkey,253,24/10/1986,3.131,3,person
+Thailand,240,23/02/1985,3.469,3,person
+Indonesia,224,23/02/1991,0.845,1,person
+Argentina,222,24/11/1986,4.989,5,person
+Austria,195,21/07/1977,22.063,22,person
+Sweden,191,27/10/1973,18.778,19,person
+Colombia,185,14/07/1995,3.705,4,person
+Israel,185,14/10/1993,20.768,21,person
+Switzerland,179,20/10/1976,21.076,21,person
+Portugal,175,23/05/1991,17.005,17,person
+New Zealand,166,7/06/1976,33.87,34,person
+United Arab Emirates,137,21/12/1994,14.358,14,person
+Singapore,136,20/10/1979,24.233,24,person
+Venezuela,133,31/08/1985,4.179,4,person
+Egypt,114,20/10/1994,1.169,1,person
+Czech Republic,110,20/03/1992,10.364,10,person
+Ukraine,103,24/05/1997,2.437,2,person
+Hungary,98,13/04/1988,10.03,10,person
+Ireland,97,9/05/1977,19.971,20,person
+Guatemala,95,6/06/1974,5.491,5,person
+Belgium,85,21/03/1978,7.445,7,person
+Romania,84,16/06/1995,4.302,4,person
+Norway,79,18/11/1983,14.871,15,person
+Chile,77,19/11/1990,4.381,4,person
+Pakistan,72,19/09/1998,0.357,0,person
+Finland,67,14/12/1984,12.142,12,person
+Kuwait,65,15/06/1994,15.378,15,person
+Qatar,63,13/12/1995,25.711,26,person
+Panama,57,1/09/1971,13.706,14,person
+Costa Rica,54,8/12/1970,10.793,11,person
+Morocco,53,18/12/1992,1.524,2,person
+Peru,40,18/10/1996,1.281,1,person
+Croatia,39,2/02/1996,9.303,9,person
+Bulgaria,35,10/12/1994,4.965,5,person
+Slovakia,35,14/10/1995,6.43,6,person
+Dominican Republic,31,30/11/1996,3.02,3,person
+Jordan,31,7/11/1996,3.03,3,person
+Ecuador,30,9/10/1997,1.758,2,person
+Serbia,30,24/03/1988,4.285,4,person
+Greece,25,12/11/1991,2.322,2,person
+Belarus,25,10/12/1996,2.638,3,person
+Oman,25,30/07/1994,4.989,5,person
+Uruguay,25,18/11/1991,7.131,7,person
+Lebanon,23,18/09/1998,3.775,4,person
+Slovenia,23,2/12/1993,11.128,11,person
+Vietnam,22,8/02/2014,0.232,0,person
+Kazakhstan,22,8/03/2016,1.204,1,person
+Bahrain,20,15/12/1994,13.366,13,person
+Azerbaijan,19,6/11/1999,1.92,2,person
+Paraguay,19,21/11/1996,2.694,3,person
+El Salvador,19,20/07/1972,2.86,3,person
+Georgia,18,5/02/1999,4.826,5,person
+Cyprus,18,12/06/1997,21.058,21,person
+Lithuania,17,31/05/1996,6.07,6,person
+Latvia,13,15/12/1994,6.751,7,person
+Mauritius,12,4/07/2001,9.487,9,person
+Estonia,10,29/04/1995,7.581,8,person
+Luxembourg,10,17/07/1985,16.611,17,person
+Honduras,9,14/12/1995,0.999,1,person
+Malta,9,7/07/1995,18.919,19,person
+Denmark,8,15/04/1981,1.382,1,person
+Sri Lanka,7,16/10/1998,0.326,0,person
+Nicaragua,6,11/07/1998,0.955,1,person
+Trinidad and Tobago,6,6/05/1997,4.423,4,person
+Bosnia and Herzegovina,5,20/07/2011,1.321,1,person
+Moldova,5,30/04/1998,1.408,1,person
+Andorra,5,29/06/1984,63.886,64,person
+Fiji,4,1/05/1996,4.52,5,person
+Suriname,3,18/12/1997,5.279,5,person
+Brunei,3,12/12/1992,7.098,7,person
+The Bahamas,3,4/08/1975,7.867,8,person
+Monaco,2,20/11/1992,52.219,52,person
+Iraq,1,10/08/2006,0.025,0,person
+Cuba,1,24/04/1986,0.089,0,person
+Samoa,1,2/03/1996,5.024,5,person
+Jersey,1,1/08/1997,9.992,10,person
+Isle of Man,1,15/12/1997,13.325,13,person
+Liechtenstein,1,3/05/1996,26.239,26,person
+Gibraltar,1,13/08/1999,496.278,496,person
