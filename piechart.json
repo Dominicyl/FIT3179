@@ -1,0 +1,135 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "A simple donut chart with embedded data.",
+  "background": "white",
+  "padding": 5,
+  "width": 200,
+  "height": 200,
+  "title": {
+    "text": "Nutrition of a Standard Big Mac (Grams)",
+    "frame": "group"
+  },
+  "data": [
+    {
+      "name": "source_0",
+      "url": "https://raw.githubusercontent.com/Dominicyl/FIT3179/main/ingredientsdata/ingredients3.csv",
+      "format": {"type": "csv", "delimiter": ","}
+    },
+    {
+      "name": "data_0",
+      "source": "source_0",
+      "transform": [
+        {
+          "type": "stack",
+          "groupby": [],
+          "field": "Big Mac",
+          "sort": {"field": ["Nutrition"], "order": ["ascending"]},
+          "as": ["Big Mac_start", "Big Mac_end"],
+          "offset": "zero"
+        },
+        {
+          "type": "filter",
+          "expr": "isValid(datum[\"Big Mac\"]) && isFinite(+datum[\"Big Mac\"])"
+        }
+      ]
+    },
+    {
+      "name": "data_1",
+      "source": "source_0",
+      "transform": [
+        {
+          "type": "stack",
+          "groupby": [],
+          "field": "Big Mac",
+          "sort": {
+            "field": ["Nutrition", "Big Mac"],
+            "order": ["ascending", "ascending"]
+          },
+          "as": ["Big Mac_start", "Big Mac_end"],
+          "offset": "zero"
+        },
+        {
+          "type": "filter",
+          "expr": "isValid(datum[\"Big Mac\"]) && isFinite(+datum[\"Big Mac\"])"
+        }
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "name": "layer_0_marks",
+      "type": "arc",
+      "style": ["arc"],
+      "from": {"data": "data_0"},
+      "encode": {
+        "update": {
+          "outerRadius": {"value": 75},
+          "fill": {"scale": "color", "field": "Nutrition"},
+          "description": {
+            "signal": "\"Big Mac: \" + (format(datum[\"Big Mac\"], \"\")) + \"; Nutrition: \" + (isValid(datum[\"Nutrition\"]) ? datum[\"Nutrition\"] : \"\"+datum[\"Nutrition\"])"
+          },
+          "x": {"signal": "width", "mult": 0.5},
+          "y": {"signal": "height", "mult": 0.5},
+          "innerRadius": {"value": 0},
+          "startAngle": {"scale": "theta", "field": "Big Mac_end"},
+          "endAngle": {"scale": "theta", "field": "Big Mac_start"}
+        }
+      }
+    },
+    {
+      "name": "layer_1_marks",
+      "type": "text",
+      "style": ["text"],
+      "from": {"data": "data_1"},
+      "encode": {
+        "update": {
+          "radius": {"value": 90},
+          "fill": {"scale": "color", "field": "Nutrition"},
+          "description": {
+            "signal": "\"Big Mac: \" + (format(datum[\"Big Mac\"], \"\")) + \"; Nutrition: \" + (isValid(datum[\"Nutrition\"]) ? datum[\"Nutrition\"] : \"\"+datum[\"Nutrition\"])"
+          },
+          "x": {"signal": "width", "mult": 0.5},
+          "y": {"signal": "height", "mult": 0.5},
+          "text": {
+            "signal": "isValid(datum[\"Big Mac\"]) ? datum[\"Big Mac\"] : \"\"+datum[\"Big Mac\"]"
+          },
+          "align": {"value": "center"},
+          "baseline": {"value": "middle"},
+          "theta": {
+            "signal": "scale(\"theta\", 0.5 * datum[\"Big Mac_start\"] + 0.5 * datum[\"Big Mac_end\"])"
+          }
+        }
+      }
+    }
+  ],
+  "scales": [
+    {
+      "name": "theta",
+      "type": "linear",
+      "domain": {
+        "fields": [
+          {"data": "data_0", "field": "Big Mac_start"},
+          {"data": "data_0", "field": "Big Mac_end"},
+          {"data": "data_1", "field": "Big Mac_start"},
+          {"data": "data_1", "field": "Big Mac_end"}
+        ]
+      },
+      "range": [0, 6.283185307179586],
+      "zero": true
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {
+        "fields": [
+          {"data": "data_0", "field": "Nutrition"},
+          {"data": "data_1", "field": "Nutrition"}
+        ],
+        "sort": true
+      },
+      "range": "category"
+    }
+  ],
+  "legends": [{"fill": "color", "symbolType": "circle", "title": "Nutrition"}],
+  "config": {}
+}
