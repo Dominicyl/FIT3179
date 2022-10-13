@@ -1,0 +1,128 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "background": "white",
+  "padding": 5,
+  "title": {
+    "text": "Number of McDonalds Per 1 Million People",
+    "dx": 50,
+    "fontSize": 18,
+    "subtitle": "Each square below represents around 10 Restaurants",
+    "anchor": "start"
+  },
+  "data": [
+    {
+      "name": "source_0",
+      "url": "https://raw.githubusercontent.com/Dominicyl/FIT3179/main/storedata/Num_of_stores7.csv",
+      "format": {"type": "csv", "delimiter": ","}
+    },
+    {
+      "name": "row_domain",
+      "source": "source_0",
+      "transform": [{"type": "aggregate", "groupby": ["Country"]}]
+    }
+  ],
+  "signals": [
+    {"name": "child_width", "value": 500},
+    {"name": "child_height", "value": 100}
+  ],
+  "layout": {
+    "padding": 20,
+    "offset": {"rowTitle": 10},
+    "columns": 1,
+    "bounds": "full",
+    "align": "all"
+  },
+  "marks": [
+    {
+      "name": "row-title",
+      "type": "group",
+      "role": "row-title",
+      "title": {
+        "text": "Country",
+        "orient": "left",
+        "style": "guide-title",
+        "offset": 10
+      }
+    },
+    {
+      "name": "row_header",
+      "type": "group",
+      "role": "row-header",
+      "from": {"data": "row_domain"},
+      "sort": {"field": "datum[\"Country\"]", "order": "ascending"},
+      "title": {
+        "text": {
+          "signal": "isValid(parent[\"Country\"]) ? parent[\"Country\"] : \"\"+parent[\"Country\"]"
+        },
+        "orient": "left",
+        "style": "guide-label",
+        "frame": "group",
+        "offset": 10
+      },
+      "encode": {"update": {"height": {"signal": "child_height"}}}
+    },
+    {
+      "name": "cell",
+      "type": "group",
+      "style": "cell",
+      "from": {
+        "facet": {"name": "facet", "data": "source_0", "groupby": ["Country"]}
+      },
+      "sort": {"field": ["datum[\"Country\"]"], "order": ["ascending"]},
+      "encode": {
+        "update": {
+          "width": {"signal": "child_width"},
+          "height": {"signal": "child_height"}
+        }
+      },
+      "marks": [
+        {
+          "name": "child_marks",
+          "type": "symbol",
+          "style": ["square"],
+          "from": {"data": "facet"},
+          "encode": {
+            "update": {
+              "opacity": {"value": 1},
+              "fill": {"scale": "color", "field": "animal"},
+              "tooltip": {
+                "signal": "{\"No. of Restaurants per Millon People\": format(datum[\"Number_of_stores_per_million_pop\"], \"\"), \"Total Number of Stores\": format(datum[\"Number_of_stores\"], \"\"), \"Country\": isValid(datum[\"Country\"]) ? datum[\"Country\"] : \"\"+datum[\"Country\"]}"
+              },
+              "ariaRoleDescription": {"value": "square"},
+              "description": {
+                "signal": "\"scaled_col: \" + (isValid(datum[\"scaled_col\"]) ? datum[\"scaled_col\"] : \"\"+datum[\"scaled_col\"]) + \"; animal: \" + (isValid(datum[\"animal\"]) ? datum[\"animal\"] : \"\"+datum[\"animal\"]) + \"; No. of Restaurants per Millon People: \" + (format(datum[\"Number_of_stores_per_million_pop\"], \"\")) + \"; Total Number of Stores: \" + (format(datum[\"Number_of_stores\"], \"\")) + \"; Country: \" + (isValid(datum[\"Country\"]) ? datum[\"Country\"] : \"\"+datum[\"Country\"])"
+              },
+              "x": {"scale": "x", "field": "scaled_col"},
+              "y": {"scale": "y", "field": "animal"},
+              "size": {"value": 1200},
+              "shape": {"value": "square"}
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "point",
+      "domain": {"data": "source_0", "field": "scaled_col", "sort": true},
+      "range": [0, {"signal": "child_width"}],
+      "padding": 0.5
+    },
+    {
+      "name": "y",
+      "type": "point",
+      "domain": {"data": "source_0", "field": "animal", "sort": true},
+      "range": [0, {"signal": "child_height"}],
+      "padding": 0.5
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": ["person"],
+      "range": ["rgb(250,128,114)"]
+    }
+  ],
+  "config": {"style": {"cell": {"stroke": ""}}}
+}
