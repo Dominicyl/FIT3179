@@ -18,8 +18,8 @@ body {
     width: 1000px;
     background-color: white;
     margin: auto;
-    padding: 100px;
-    padding-top: 35px;
+    padding: 0px;
+    padding-top: 0px;
 }
 
 .vis-container {
