@@ -2,8 +2,8 @@
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "background": "white",
   "padding": 5,
-  "width": 700,
-  "height": 400,
+  "width": 500,
+  "height": 300,
   "title": {
     "text": "Price of Big Mac Around the World in USD (2020)",
     "frame": "group"
