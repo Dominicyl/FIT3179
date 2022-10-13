@@ -10,6 +10,8 @@ body {
     background-color: lightgray;
 }
 
+.bgcolour1 {Background: red;}
+
 .page {
     width: 850px;
     background-color: white;
